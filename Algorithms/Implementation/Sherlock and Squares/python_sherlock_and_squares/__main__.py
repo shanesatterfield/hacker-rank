@@ -4,8 +4,8 @@ import sys, math
 
 def main():
     T = int(input())
-    for n in range( T ):
-        interval = [ int(x) for x in input().split() ]
+    for line in sys.stdin.readlines()[:T]:
+        interval = [ int(x) for x in line.split() ]
         print( squares_interval( interval[0], interval[1] ) )
 
 def squares_interval( a, b ):
@@ -14,7 +14,7 @@ def squares_interval( a, b ):
     if is_square( a ):
         count = 1
 
-    count += math.floor( math.sqrt( b ) ) - math.floor( math.sqrt( a ) )
+    count += int(math.sqrt( b )) - int(math.sqrt( a ))
     return count
 
 def is_square( num ):

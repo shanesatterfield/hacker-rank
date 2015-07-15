@@ -22,8 +22,8 @@ import sys, math
 def main():
     # Get the number of tests to run.
     T = int(input())
-    for n in range( T ):
-        N = int(input())
+    for line in sys.stdin.readlines()[:T]:
+        N = int( line )
         print( get_decent( N ) )
 
 def get_decent( N ):

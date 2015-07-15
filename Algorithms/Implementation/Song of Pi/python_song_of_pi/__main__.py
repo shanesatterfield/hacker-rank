@@ -34,8 +34,8 @@ MY_PI = '31415926535897932384626433833'
 
 def main():
     T = int(input())
-    for n in range( T ):
-        text = str(input())
+    for line in sys.stdin.readlines()[:T]:
+        text = line
 
         if is_pi_song( text ):
             print("It's a pi song.")
