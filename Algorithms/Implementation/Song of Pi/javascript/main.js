@@ -1,38 +1,3 @@
-var readline = require('readline');
-var song = require('./song');
-
-// Sets up reading from stdin.
-var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    terminal: false
-});
-
-// The number of test cases to read.
-var T = -1;
-
-// The test cases.
-var lines = [];
-
-// Processes stdin.
-rl.on('line', function(line) {
-    if( T <= 0 ) {
-        T = parseInt( line );
-    }
-    else if( lines.length < T ) {
-        lines.push( line );
-
-        if( lines.length == T ) {
-            main();
-            rl.close();
-        }
-    }
-    else {
-        rl.close();
-    }
-})
-
-// Takes the input and prints the proper output to stdout.
 function main() {
     for( var i in lines ) {
         if( song.isPiSong( lines[i] ) == true ) {
@@ -43,3 +8,52 @@ function main() {
         }
     }
 }
+
+var song = module.exports = {
+    // This is the value of pi that will be used for the purposes of this problem.
+    MY_PI: '31415926535897932384626433833',
+
+    // Determines if the string is a pie song.
+    isPiSong: function( song ) {
+        var words  = getWords( song );
+        var result = true;
+
+        for( var i = 0; i < words.length; ++i ) {
+            if( words[i].length != parseInt( this.MY_PI[i] ) ) {
+                result = false;
+                break;
+            }
+        }
+
+        return result;
+    }
+};
+
+// Function to get a list of words from a string.
+function getWords( text ) {
+    return text.split(/\W+/);
+}
+
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
+
+var T = -1;
+var lines = [];
+
+process.stdin.on('data', function( data ) {
+    data = data.split('\n');
+
+    if( T <= 0 ) {
+        T = parseInt( data[0] );
+    }
+
+    for( var i = 1; i <= T; ++i ) {
+        if( data[i].length > 0 ) {
+            lines.push( data[i] );
+        }
+    }
+});
+
+process.stdin.on('end', function() {
+    main();
+});

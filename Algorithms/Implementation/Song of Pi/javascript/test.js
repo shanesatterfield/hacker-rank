@@ -1,5 +1,5 @@
 var assert = require('assert');
-var song = require('./song.js');
+var song = require('./main.js');
 
 describe('Song of Pi', function() {
     it('Test Case 1', function() {
