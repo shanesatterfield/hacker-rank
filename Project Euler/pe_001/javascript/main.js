@@ -4,7 +4,7 @@ var exports = module.exports = {
     // that though.
     fizzbuzz: function( num ) {
         N = num-1;
-        return this.calcFizz( N, 3 )- this.calcFizz( N, 15 ) + this.calcFizz( N, 5 );
+        return this.calcFizz( N, 3 ) - this.calcFizz( N, 15 ) + this.calcFizz( N, 5 );
     },
 
     calcFizz: function( N, K ) {
