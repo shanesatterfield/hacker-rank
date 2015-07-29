@@ -1,0 +1,3 @@
+java 100
+cpp 65
+python 50

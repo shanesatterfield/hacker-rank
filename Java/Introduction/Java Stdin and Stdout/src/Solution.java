@@ -10,11 +10,9 @@ class Solution {
         List<Object> ans = getInput();
 
         // Prints out the input as properly formatted output to stdout.
-        System.out.printf("String: %s\nDouble: %f\nInt: %d\n",
-            (String)ans.get(2),
-            (double)ans.get(1),
-            (int)ans.get(0)
-        );
+        System.out.println("String: " + (String)ans.get(2));
+        System.out.println("Double: " + (double)ans.get(1));
+        System.out.println("Int: "    +    (int)ans.get(0));
     }
 
     /**
