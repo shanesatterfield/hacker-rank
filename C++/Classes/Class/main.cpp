@@ -1,24 +1,6 @@
 #include <iostream>
 #include <sstream>
 
-class Student;
-
-int main( int argc, char* argv[] ) {
-    Student st;
-    int age, standard;
-    std::string lastName, firstName;
-
-    std::cin >> age >> firstName >> lastName >> standard;
-    st.setAge( age );
-    st.setFirstName( firstName );
-    st.setLastName( lastName );
-    st.setStandard( standard );
-
-    std::cout << st.getAge() << '\n' << st.getLastName() << ", " << st.getFirstName() << '\n' << st.getStandard() << '\n' << std::endl;
-    std::cout << st.toString();
-    return 0;
-}
-
 class Student {
 public:
     void setAge( int age ) {
@@ -65,3 +47,20 @@ private:
     std::string lastName;
     int standard;
 };
+
+int main( int argc, char* argv[] ) {
+    Student st;
+    int age, standard;
+    std::string lastName, firstName;
+
+    std::cin >> age >> firstName >> lastName >> standard;
+    st.setAge( age );
+    st.setFirstName( firstName );
+    st.setLastName( lastName );
+    st.setStandard( standard );
+
+    std::cout << st.getAge() << '\n' << st.getLastName() << ", " << st.getFirstName() << '\n' << st.getStandard() << '\n' << std::endl;
+    std::cout << st.toString();
+    return 0;
+}
+
