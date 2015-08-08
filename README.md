@@ -5,6 +5,9 @@ This is a repository of my solutions to [Hacker Rank](https://www.hackerrank.com
 Currently, I have solutions written in
 - Python 2 and 3
 - Javascript
+- Java
+- C++
+- SQL
 
 ## How to Run the Code
 
@@ -38,3 +41,19 @@ mocha **/test.js
 ```
 
 If you are with a directory with a test file, you can simply run the `mocha` command to run tests from just that module.
+
+## C++
+You can run the C++ code by using the CMake build system. A CMakeLists.txt file is supplied for each solution and a vew top level CMakeLists.txt files that allow you to build all of the C++ solutions from the C++ subdirectory.
+
+#### Compiling the Solutions
+You must have a C++ compiler and CMake set up on your system. Then run the following commands from the C++ subdirectory.
+```bash
+mkdir build && cd build && cmake .. && make
+```
+You might need to use a different toolchain depending on which compiler you are using and which operating system you are on.
+
+## Java
+You will need a Java compiler and Gradle installed on your system. You can navigate to a directory containing a build.gradle file and run the code with the `gradle run` command. Note that you can use quiet mode with gradle to remove the gradle stdout output. To do this add the `-q` flag. Ex: `gradle -q run`.
+
+#### Running the Tests
+Some of the Java solutions have tests written for them. You can run these tests with either the commands `gradle test` or `gradle build`. If the tests fail, you will see output telling you which tests failed. If no tests failed, there will be no output.
