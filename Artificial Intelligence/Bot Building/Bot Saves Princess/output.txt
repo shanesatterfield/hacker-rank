@@ -1,0 +1,2 @@
+DOWN
+LEFT
