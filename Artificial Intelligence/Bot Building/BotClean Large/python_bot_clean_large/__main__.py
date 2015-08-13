@@ -136,7 +136,7 @@ def main():
 
     maze = Grid(r, c, grid)
     maze.start()
-    wait_time = 0.05
+    wait_time = 0.01
 
     while True:
         movement = next_move(r, c, grid)
@@ -145,7 +145,7 @@ def main():
 
         r, c, grid = mod_grid( r, c, grid, movement )
         maze.set_grid_data( r, c, grid )
-        # time.sleep( wait_time )
+        time.sleep( wait_time )
 
     time.sleep( wait_time )
     maze.close()

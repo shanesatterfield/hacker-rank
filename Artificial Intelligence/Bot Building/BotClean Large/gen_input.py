@@ -6,7 +6,7 @@ print(0, 0)
 
 # Randomly generate the dimensions of the grid.
 MIN_RANGE = 5
-MAX_RANGE = 50
+MAX_RANGE = 10
 rows      = random.randint( MIN_RANGE, MAX_RANGE )
 columns   = random.randint( MIN_RANGE, MAX_RANGE )
 print(rows, columns)
