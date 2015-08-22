@@ -3,10 +3,10 @@ import sys, math
 
 def encryption( text ):
     length_sqrt = math.sqrt(len(text))
-    row, column = math.floor(length_sqrt), math.ceil(length_sqrt)
+    row, column = int(math.floor(length_sqrt)), int(math.ceil(length_sqrt))
     if row * column < len(text):
         row += 1
-        
+
     grid = [ list(text[x*column : (x+1)*column]) for x in range(row) ]
 
     result = []
