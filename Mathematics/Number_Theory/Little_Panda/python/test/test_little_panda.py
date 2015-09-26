@@ -12,3 +12,6 @@ def test_case_3():
 
 def test_case_4():
     assert extended_euclidean(984877, 309, 328453) == 252015
+
+def test_case_5():
+    assert extended_euclidean(335735, -946018, 123698) == 11173
