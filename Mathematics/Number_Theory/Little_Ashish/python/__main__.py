@@ -1,64 +1,26 @@
 from __future__ import print_function, division
 import sys, math
 
+# Modified cubic formula solution.
+# Rounds for floating point error.
 def ashish(candies):
-    # return ashish_naive(candies)
-    return other_equ(candies)
+    p = -0.5
+    q = 1.5*candies
+    r = 1/6
 
-def ashish_faster(candies):
-    i = 0
-    while True:
-        if sqrs_seq(i+1) > candies:
-            break
-        i += 1
-    return i
+    g = math.pow((q**2) + math.pow(r-(p**2), 3), 1/2)
+    x = math.pow(q + g, 1/3) + math.pow(q - g, 1/3) + p
+    return int(round(x, 8))
 
-def sqrs_seq(x):
-    return int((x/6) * (x+1) * (2*x + 1))
+# a=1/3, b=1/2, c=1/6 d=-candies
+def cubic_forumla(a, b, c, d):
+    p = -b/(3*a)
+    q = (p**3) + (b*c - 3*a*d)/(6*(a**2))
+    r = c/(3*a)
 
-def other_equ(d):
-    q = 1/36
-    r = -27*(-d) + 0.5
-    discriminant = math.pow(q,3) + math.pow(r,2)
-    t = r - math.sqrt(discriminant)
-    s = r + math.sqrt(discriminant)
-
-    term1 = None
-    if discriminant > 0:
-        term1 = 1/6
-    else:
-        term1 = math.sqrt(3) * ((-t + s) / 2)
-    r13 = 2 * math.sqrt(q)
-    print(r13, q, q**3, r13*math.cos(math.pow(q,3)/3))
-    return -term1 + r13*math.cos(math.pow(q,3)/3)
-
-def ashish_naive(candies):
-    i    = 0
-    curr = None
-    while True:
-        curr = int(math.pow(i+1, 2))
-        if curr > candies:
-            break
-
-        candies -= curr
-        i += 1
-    return i
-
-def binary_search_start(num, full_range):
-    return binary_search(num, full_range//2, full_range)
-
-# Modified binary search for this problem.
-def binary_search( num, curr, incr ):
-    incr = incr // 2
-    if num >= curr and num < curr+1:
-        return curr
-    elif curr > 0 and num >= curr-1
-    if incr <= 0:
-        if
-    elif num > curr:
-        return binary_search(num, curr - incr, incr)
-    elif num < curr:
-        return binary_search(num, curr + incr, incr)
+    g = math.pow((q**2) + math.pow(r-(p**2), 3), 1/2)
+    x = math.pow(q + g, 1/3) + math.pow(q - g, 1/3) + p
+    return int(round(x, 12))
 
 def main():
     T = int(input())
