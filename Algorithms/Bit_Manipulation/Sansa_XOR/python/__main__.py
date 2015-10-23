@@ -5,10 +5,10 @@ import sys
 def sansa(lst):
     result = 0
     for j in range(len(lst)):
-        for i in range(len(lst)):
-            if i + j >= len(lst):
-                break
-            result ^= reduce(lambda x,y: x^y, lst[i:i+j+1])
+        temp = 0
+        for i in range(j, len(lst)):
+            temp ^= lst[i]
+            result ^= temp
     return result
 
 def main():
