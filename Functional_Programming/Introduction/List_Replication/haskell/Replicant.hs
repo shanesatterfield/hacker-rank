@@ -1,4 +1,4 @@
-import Test.Hspec
+module Replicant (replicant) where
 
 replicant n arr = foldl (\x y -> x ++ (replicate n y)) [] arr
 
