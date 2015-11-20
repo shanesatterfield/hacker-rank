@@ -4,11 +4,9 @@ import sys
 
 def sansa(lst):
     result = 0
-    for j in range(len(lst)):
-        temp = 0
-        for i in range(j, len(lst)):
-            temp ^= lst[i]
-            result ^= temp
+    starting = int(len(lst)%2==0)
+    for n in range(starting, len(lst), 2):
+        result ^= lst[n]
     return result
 
 def main():
