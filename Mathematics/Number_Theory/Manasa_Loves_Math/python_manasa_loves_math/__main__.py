@@ -3,10 +3,10 @@ import sys, itertools
 
 def manasa(num):
     result = False
-    for n in filter(itertools.permutations(str(num)), ):
-        if ord(n[-1]) & 1 == 0 and int(''.join(n)) % 8 == 0:
-            result = True
-            break
+    # for n in filter(itertools.permutations(str(num)), ):
+    #     if ord(n[-1]) & 1 == 0 and int(''.join(n)) % 8 == 0:
+    #         result = True
+    #         break
     return result
 
 def main():

@@ -2,7 +2,7 @@ import pytest
 from ..__main__ import *
 
 def test_o_clock():
-    assert word_time(5, 0) == "five o'clock"
+    assert word_time(5, 0) == "five o' clock"
 
 def test_1_past_five():
     assert word_time(6, 1) == 'one minute past six'
