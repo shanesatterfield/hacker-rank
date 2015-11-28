@@ -42,6 +42,20 @@ mocha **/test.js
 
 If you are with a directory with a test file, you can simply run the `mocha` command to run tests from just that module.
 
+## Coffeescript
+
+You can run the coffeescript solutions by running the following command from the root directory of the coffeescript solution.
+```
+coffee src/main.coffee
+```
+
+#### Running the Tests
+
+You will need to have coffee-script installed locally and mocha installed. You can them run the tests from the root directory off the coffeescript solution.
+```
+mocha --compilers coffee:coffee-script/register
+```
+
 ## C++
 You can run the C++ code by using the CMake build system. A CMakeLists.txt file is supplied for each solution and a vew top level CMakeLists.txt files that allow you to build all of the C++ solutions from the C++ subdirectory.
 
@@ -57,3 +71,4 @@ You will need a Java compiler and Gradle installed on your system. You can navig
 
 #### Running the Tests
 Some of the Java solutions have tests written for them. You can run these tests with either the commands `gradle test` or `gradle build`. If the tests fail, you will see output telling you which tests failed. If no tests failed, there will be no output.
+
