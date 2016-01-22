@@ -1,5 +1,5 @@
 import pytest
-from ..__main__ import pe_004
+from ..__main__ import pe_004, is_palindrome
 
 def test_case_1():
     assert pe_004(101110) == 101101
