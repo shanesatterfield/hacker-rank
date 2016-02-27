@@ -10,21 +10,34 @@ class Anagram {
         calculateFrequencies();
     }
 
-    // TODO: Test this funciton.
     public void calculateFrequencies() {
         frequencies = new HashMap<>();
         this.origString.chars().forEach((c) -> {
-            frequencies.putIfAbsent((char)c, 0);
-            frequencies.put((char)c, frequencies.get(c) + 1);
+            char curr = Character.toLowerCase((char)c);
+            frequencies.putIfAbsent(curr, 0);
+            frequencies.put(curr, frequencies.get(curr) + 1);
         });
     }
 
-    // TODO: Finish writing this function.
     public boolean isAnagram(Anagram b) {
+        // Check that the set of letts contained in both anagrams are the same.
         if (this.getLetters().equals(b.getLetters()) == false) {
             return false;
         }
+
+        // Make sure that the frequencies of each letter found are the same.
+        for (Character c: this.getLetters()) {
+            if (this.get(c) != b.get(c)) {
+                return false;
+            }
+        }
+
+        // If all are the same, then a and b are anagrams of each other.
         return true;
+    }
+
+    public int get(char c) {
+        return this.frequencies.get(c);
     }
 
     public Set<Character> getLetters() {
@@ -45,8 +58,4 @@ class Anagram {
 
     protected String origString;
     protected HashMap<Character, Integer> frequencies;
-}
-
-public class AnagramChecker {
-
 }

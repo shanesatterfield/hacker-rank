@@ -8,7 +8,12 @@ public class AnagramTest {
     }
 
     @Test
-    public void testCase1() {
-        assertEquals(Anagram.isAnagram("anagramm", "marganaa"), true);
+    public void testCase2() {
+        assertEquals(Anagram.isAnagram("anagramm", "marganaa"), false);
+    }
+
+    @Test
+    public void testCase3() {
+        assertEquals(Anagram.isAnagram("Hello", "hello"), true);
     }
 }
