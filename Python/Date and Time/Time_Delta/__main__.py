@@ -1,8 +1,15 @@
 from __future__ import print_function
-import sys, datetime
+import sys
+from datetime import datetime
+
+time_format = '%a %d %b %Y %H:%M:%S %z';
 
 def delta(time1, time2):
-    return datetime.datetime.utcfromtimestamp(time1)
+    a = datetime.strptime(time1, time_format)
+    b = datetime.strptime(time2, time_format)
+
+    return abs(int((a - b).total_seconds()))
+
 
 def main():
     T = int(input())
