@@ -1,0 +1,16 @@
+{
+  "name": "javascript-hacker-rank-solutions",
+  "version": "1.0.0",
+  "description": "Javascript solutions for Hacker Rank challenges.",
+  "main": "index.js",
+  "repository": "https://github.com/shanesatterfield/hacker-rank",
+  "author": "Shane Satterfield",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "mocha **/test.js"
+  },
+  "dependencies": {
+    "mocha": "^5.0.0"
+  }
+}
