@@ -9,7 +9,9 @@ funcs = {
 
 def setdis(starting_list, commands):
     result = set(starting_list)
-    for cmd in commands:
+    commands_parsed = [cmd.split() for cmd in commands]
+
+    for cmd in commands_parsed:
         if len(cmd) == 2:
             cmd[1] = int(cmd[1])
         funcs[cmd[0]](result, *cmd[1:])
@@ -18,7 +20,7 @@ def setdis(starting_list, commands):
 def main():
     lines = [ x.strip() for x in sys.stdin.readlines() ]
     starting_list = [ int(x) for x in lines[1].split() ]
-    commands = [ line.split() for line in lines[3:] ]
+    commands = lines[3:]
 
     print(setdis(starting_list, commands))
 

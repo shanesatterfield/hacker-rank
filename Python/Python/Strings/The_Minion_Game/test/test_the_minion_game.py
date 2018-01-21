@@ -1,4 +1,5 @@
 import pytest
+from os import path
 from ..__main__ import *
 
 def test_case_1():
@@ -11,5 +12,5 @@ def test_case_3():
     assert minion('BANANANAAAS') == ['Draw']
 
 def test_case_4():
-    with open('./input2.txt', 'r') as f:
+    with open(path.join(path.dirname(__file__), '../input2.txt'), 'r') as f:
         assert minion(f.read().rstrip()) == ['Stuart', 7501500]
