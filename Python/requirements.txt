@@ -1,2 +1,2 @@
-pytest
-pytest-sugar
+pytest==3.3.2
+pytest-sugar==0.9.0
