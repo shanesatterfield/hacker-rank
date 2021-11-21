@@ -16,4 +16,4 @@ Query the names of all American cities in CITY with populations larger than 120,
 
 SELECT NAME
 FROM CITY
-WHERE COUNTRYCODE = "USA" AND POPULATION > 120000;
+WHERE COUNTRYCODE = 'USA' AND POPULATION > 120000;
